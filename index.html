@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CronoSeries - Estilo Kodansha v5.4</title>
+
+    <!-- PWA Manifest y Metadatos -->
+    <meta name="theme-color" content="#ffffff"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="CronoSeries">
+    <link rel="apple-touch-icon" href="https://placehold.co/192x192/000000/FFFFFF?text=CS">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Enlaces a Fuentes y Estilos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Roboto+Mono:wght@400;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- PÁGINA DE INICIO -->
+    <section id="home-section" class="page active">
+        <div class="home-left-panel">
+            <div>
+                <button id="enter-app-button" class="main-button">Calendario</button>
+                <div class="home-footer-text" style="margin-top: 1rem;">Stream Anime - ENJOY</div>
+            </div>
+        </div>
+        <div class="home-center-panel">
+            <div id="home-anime-bubbles"></div>
+        </div>
+        <div class="home-right-panel">
+            <div>
+                <div id="home-top-nav" class="home-top-icons">
+                    <button class="home-icon" data-page="all-animes-section" title="Todos los Animes">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg>
+                    </button>
+                    <button class="home-icon" data-page="gallery-section" title="Galería">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    </button>
+                    <button class="home-icon" data-page="history-section" title="Historial">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </button>
+                    <button class="home-icon" data-page="stats-section" title="Estadísticas">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"></path><path d="M18 20V4"></path><path d="M6 20V16"></path></svg>
+                    </button>
+                    <button class="home-icon" data-page="settings-section" title="Ajustes">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l-.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    </button>
+                </div>
+                <h1 class="home-vertical-title">CronoSeries</h1>
+            </div>
+            <div class="home-search-area">
+                <input type="search" id="home-search-input" placeholder="Buscar...">
+            </div>
+        </div>
+        <div class="home-bottom-panel">
+            <div class="home-main-card">
+                <h3 id="home-day-of-week">Hoy es...</h3>
+            </div>
+            <div class="home-main-card">
+                <div id="home-total-animes" class="value">0</div>
+                <h3>Capítulos Vistos</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENEDOR PRINCIPAL DE LA APP -->
+    <div id="main-app-container">
+        <header class="app-header">
+            <h1 class="logo-title" data-page="home-section">CronoSeries</h1>
+            <nav class="desktop-nav">
+                <button class="nav-link" data-page="calendar-section">Calendario</button>
+                <button class="nav-link" data-page="all-animes-section">Todos</button>
+                <button class="nav-link" data-page="gallery-section">Galería</button>
+                <button class="nav-link" data-page="history-section">Historial</button>
+                <button class="nav-link" data-page="stats-section">Estadísticas</button>
+                <button class="nav-link" data-page="settings-section">Ajustes</button>
+            </nav>
+            <button class="mobile-menu-toggle">Menu</button>
+        </header>
+        
+        <div class="mobile-menu-panel">
+            <div class="mobile-menu-header">
+                <h1 class="logo-title">CronoSeries</h1>
+                <button class="mobile-menu-close">Cerrar</button>
+            </div>
+            <nav class="mobile-nav">
+                <button class="nav-link-mobile" data-page="home-section">Inicio</button>
+                <button class="nav-link-mobile" data-page="calendar-section">Calendario</button>
+                <button class="nav-link-mobile" data-page="all-animes-section">Todos los Animes</button>
+                <button class="nav-link-mobile" data-page="gallery-section">Galería</button>
+                <button class="nav-link-mobile" data-page="history-section">Historial</button>
+                <button class="nav-link-mobile" data-page="stats-section">Estadísticas</button>
+                <button class="nav-link-mobile" data-page="settings-section">Ajustes</button>
+            </nav>
+        </div>
+
+        <div class="app-content">
+            <main id="calendar-section" class="page"></main>
+            
+            <main id="all-animes-section" class="page">
+                <div class="view-controls">
+                    <div class="sort-controls">
+                        <select class="calendar-sort-select">
+                            <option value="creationDate">Ordenar por: Fecha</option>
+                            <option value="name">Ordenar por: Nombre (A-Z)</option>
+                            <option value="year">Ordenar por: Año</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button id="grid-view-btn" class="main-button small-button active">Grid</button>
+                        <button id="shelf-view-btn" class="main-button small-button">Estantería</button>
+                    </div>
+                </div>
+                <div class="filters-container">
+                    <input type="search" id="search-bar" placeholder="Buscar por nombre...">
+                    <div><h4>Filtrar por Género:</h4><div id="genre-filter-buttons" class="filter-group"></div></div>
+                    <div><h4>Filtrar por Estado:</h4><div id="status-filter-buttons" class="filter-group"></div></div>
+                </div>
+                <div id="all-animes-grid" class="anime-grid"></div>
+                <div id="shelf-view"></div>
+            </main>
+
+            <main id="gallery-section" class="page">
+                <h2>Galería de Portadas</h2>
+                <div id="gallery-grid" class="gallery-grid"></div>
+            </main>
+
+            <main id="history-section" class="page">
+                <h2>Historial de Completados</h2>
+                <div class="filters-container">
+                    <h4>Ordenar por:</h4>
+                    <div class="filter-group">
+                        <button class="main-button small-button" data-sort="date">Fecha</button>
+                        <button class="main-button small-button" data-sort="name">Nombre</button>
+                    </div>
+                </div>
+                <div id="history-list"></div>
+            </main>
+
+            <main id="stats-section" class="page">
+                <h2>Estadísticas de la Semana</h2>
+                <div class="stats-container">
+                    <h4>Episodios Vistos en los Últimos 7 Días</h4>
+                    <div id="stats-chart" class="chart-container"></div>
+                </div>
+            </main>
+
+            <main id="settings-section" class="page">
+                <h2>Ajustes</h2>
+                <div class="settings-block">
+                    <h3>Tema de la Aplicación</h3>
+                    <label for="theme-select">Elige un tema visual para la aplicación.</label>
+                    <select id="theme-select"></select>
+                </div>
+                <div class="settings-block">
+                    <h3>Notificaciones Diarias</h3>
+                    <label for="notification-time">Hora del recordatorio diario:</label>
+                    <input type="time" id="notification-time">
+                    <p id="notification-status" style="margin-top: 1rem; font-size: 0.9rem;"></p>
+                    <div class="form-buttons" style="justify-content: flex-start;">
+                        <button id="save-notification-settings-btn" class="main-button">Guardar Hora</button>
+                        <button id="disable-notifications-btn" class="main-button secondary">Desactivar</button>
+                    </div>
+                </div>
+                <div class="settings-block">
+                    <h3>Ajustes de Datos</h3>
+                    <h4>Exportar Datos</h4>
+                    <p>Guarda una copia de seguridad de todas tus series, progreso e imágenes en un solo archivo.</p>
+                    <button id="export-data-btn" class="main-button">Exportar a .json</button>
+                </div>
+                <div class="settings-block">
+                    <h4>Importar Datos</h4>
+                    <p>Restaura tus datos desde un archivo de copia de seguridad. ¡Atención! Esto sobrescribirá todos los datos actuales.</p>
+                    <input type="file" id="import-file-input" accept=".json">
+                    <label for="import-file-input" class="import-label">Seleccionar archivo...</label>
+                    <p id="file-name-display"></p>
+                </div>
+                <div class="settings-block">
+                    <h3>Personalizar Colores de Género</h3>
+                    <div class="color-editor-ui">
+                        <select id="genre-color-select"></select>
+                        <div id="genre-color-preview"></div>
+                    </div>
+                    <div id="color-palette"></div>
+                    <p id="color-conflict-message"></p>
+                    <button id="save-color-settings-btn" class="main-button">Guardar Cambios</button>
+                </div>
+            </main>
+
+            <main id="search-results-section" class="page">
+                <h2>Resultados de Búsqueda</h2>
+                <p>Resultados para: "<strong id="search-query-display"></strong>"</p>
+                <div id="search-results-grid" class="anime-grid"></div>
+            </main>
+        </div>
+    </div>
+
+    <!-- MODALES -->
+    <div id="welcome-modal" class="modal-overlay">
+        <div class="modal-content" style="text-align: center;">
+            <h2>¡Bienvenido/a a CronoSeries!</h2>
+            <p>Este es tu calendario personal para organizar y seguir el progreso de todas tus series de anime. Nunca más te olvidarás de un episodio.</p>
+            <p>Para empezar, configura una hora para recibir un recordatorio diario con los animes del día.</p>
+            <form id="welcome-form">
+                <label for="welcome-notification-time" style="margin-top: 1.5rem;">¿A qué hora comienza tu día de anime?</label>
+                <input type="time" id="welcome-notification-time" required style="padding: 0.5rem; font-size: 1.2rem; margin: 0.5rem auto 1.5rem auto; display: block; width: fit-content;">
+                <button type="submit" class="main-button">Guardar y Empezar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="add-entry-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-tabs">
+                <button class="tab-button active" data-tab="anilist-tab">Buscar en AniList</button>
+                <button class="tab-button" data-tab="manual-tab">Añadir Manualmente</button>
+            </div>
+
+            <div id="anilist-tab" class="tab-content active">
+                <input type="search" id="anilist-search-input" placeholder="Buscar anime...">
+                <h4 id="anilist-recommendations-title">Populares de la Temporada</h4>
+                <div id="anilist-results"></div>
+            </div>
+
+            <div id="manual-tab" class="tab-content">
+                <form id="entry-form">
+                    <input type="hidden" id="entry-day">
+                    <label for="descripcion">Título</label><input type="text" id="descripcion" required>
+                    <label for="imagen" id="image-upload-label">Portada (Archivo)</label><input type="file" id="imagen" accept="image/*">
+                    <label for="imagen-url" id="image-url-label">O URL de Portada</label><input type="text" id="imagen-url" placeholder="Pega aquí la URL de la imagen">
+                    <label for="synopsis">Sinopsis</label><textarea id="synopsis" rows="4"></textarea>
+                    <div class="form-grid">
+                        <div><label for="status">Estado</label><select id="status" required></select></div>
+                        <div><label for="ano">Año Estreno</label><select id="ano" required></select></div>
+                    </div>
+                    <label>Géneros</label><div id="genre-checkboxes"></div>
+                    <label for="totalEpisodios">Total de Episodios</label><input type="number" id="totalEpisodios" required min="1">
+                    <div class="form-buttons">
+                        <button type="button" id="cancel-button" class="main-button secondary">Cancelar</button>
+                        <button type="submit" class="main-button">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="details-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="details-modal-left">
+                <img id="details-modal-img" src="" alt="Portada">
+            </div>
+            <div class="details-modal-right">
+                <div class="details-modal-info">
+                    <h3 id="details-modal-title"></h3>
+                    <p id="details-modal-meta"></p>
+                    <p><strong>Estado:</strong> <span id="details-modal-status"></span></p>
+                    <p><strong>Sinopsis:</strong></p>
+                    <p id="details-modal-synopsis" class="synopsis-text"></p>
+                    <p><strong>Géneros:</strong></p>
+                    <div id="details-modal-genres" class="genres-list"></div>
+                    <div id="episode-editor">
+                        <div class="episode-editor-header">
+                           <p><strong>Episodios:</strong></p>
+                           <button id="mark-all-episodes-btn" class="main-button small-button">Marcar Todos</button>
+                        </div>
+                        <div id="details-modal-episodes" class="episodes-list"></div>
+                    </div>
+                </div>
+                <div class="form-buttons">
+                    <button id="details-delete-btn" class="main-button secondary">Eliminar</button>
+                    <button id="details-edit-episodes-btn" class="main-button">Editar Episodios</button>
+                    <button id="details-save-btn" class="main-button" style="display: none;">Guardar Progreso</button>
+                    <button id="details-close-btn" class="main-button">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="message-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 400px; text-align: center;">
+            <h3 id="message-title">Aviso</h3>
+            <p id="message-text" style="margin: 1rem 0;"></p>
+            <div class="form-buttons" style="justify-content: center;">
+                <button id="message-ok-btn" class="main-button">Aceptar</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="confirmation-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 400px; text-align: center;">
+            <h3 id="confirmation-title">Confirmación</h3>
+            <p id="confirmation-message" style="margin: 1rem 0;"></p>
+            <div class="form-buttons">
+                <button id="confirm-cancel-btn" class="main-button secondary">Cancelar</button>
+                <button id="confirm-ok-btn" class="main-button">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enlace al script principal de la aplicación -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>

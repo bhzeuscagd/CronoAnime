@@ -1,0 +1,23 @@
+{
+  "name": "CronoSeries",
+  "short_name": "CronoSeries",
+  "description": "Un calendario para organizar y seguir tus series de anime.",
+  "icons": [
+    {
+      "src": "https://placehold.co/192x192/000000/FFFFFF?text=CS",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://placehold.co/512x512/000000/FFFFFF?text=CS",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000"
+}
